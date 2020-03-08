@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer')
+const config = require('../../config')
 
 const sendMail =  (disease, area) => {
     // Initialize a Nodemailer transporter
@@ -7,8 +8,8 @@ const sendMail =  (disease, area) => {
         port: 587,
         secure: false,
         auth: {
-            user: "hemangb@xlearno.com",
-            pass: "hemangb@xlearno" 
+            user: config.email,
+            pass: config.password 
         },
         tls: {rejectUnauthorized: false},
         debug: true,
@@ -17,7 +18,7 @@ const sendMail =  (disease, area) => {
      
      // Send off the verification mail to the user 
      transporter.sendMail({
-         from: `hemangb@xlearno.com`,
+         from: config.email,
          to: "hemang249@gmail.com",
          subject: "Disease Breakout Alert",
          text: "Please Be Aware, There is a breakout of " + disease + " in " + area

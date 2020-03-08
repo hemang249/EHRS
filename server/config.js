@@ -9,5 +9,7 @@ module.exports = {
     port: process.env.PORT,
     mongodbUrl: process.env.MONGODB_URL,
     patientSecret: process.env.PATIENT_SECRET,
-    doctorSecret: process.env.DOCTOR_SECRET
+    doctorSecret: process.env.DOCTOR_SECRET,
+    email: process.env.EMAIL,
+    password: process.env.PASSWORD
 }
